@@ -1,0 +1,58 @@
+{% extends 'base1.html' %} {% load static %} {% block content %}
+<title>Transfer Details</title>
+<br>
+<h1 style="color:darkslategrey;font-family:'Times New Roman', Times, serif, serif;font-weight:600;font-size: 45px;text-align:center;">Transfer Details</h1>
+
+<br>
+<br>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Transfer Amt</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in tr %}
+            <tr>
+
+                <td>{{t.sender}}</td>
+                <td>{{t.receiver}}</td>
+                <td>Rs.{{t.amount}}</td>
+                <td>{{t.date_tran}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <style>
+        .table>thead>tr>th {
+            vertical-align: bottom;
+            border-bottom: 2px solid rgb(66, 65, 65);
+            font-family: cursive;
+            font-size: 25px;
+        }
+        
+        .table>tbody>tr>td,
+        .table>tbody>tr>th,
+        .table>tfoot>tr>td,
+        .table>tfoot>tr>th,
+        .table>thead>tr>td,
+        .table>thead>tr>th {
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-top: 1px solid rgb(51, 50, 50);
+            font-family: cursive;
+            font-size: 20px;
+        }
+        
+        .table>thead>tr>th {
+            background-color: lightsteelblue;
+        }
+    </style>
+    <br>
+    <br> {% endblock content %}

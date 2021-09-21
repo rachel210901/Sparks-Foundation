@@ -1,0 +1,109 @@
+{% extends 'base_layout.html' %} {% load static %} {% block content %}
+<div class="slider">
+
+    <ul class="slides">
+
+        <img src="/static/img/bg2.png" width="1519px" height="470px">
+
+        <li>
+
+        </li>
+
+    </ul>
+</div>
+
+
+
+
+
+<br><br><br><br><br>
+
+
+
+<!--OUR SERVICES-->
+
+
+<br><br><br><br><br>
+<section>
+
+
+    <style>
+        .single-service {
+            height: 300px;
+            padding: 30px 20px;
+            text-decoration: none;
+            width: 250px;
+            transition: .5s;
+            text-align: center;
+        }
+        
+        .single-service .fa-9x {
+            border-radius: 50%;
+            box-shadow: 0 2px 30px rgba(224, 19, 19, 0.4);
+            color: #000;
+            display: inline-block;
+            padding: 8px 20px;
+            height: 200px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        
+        .single-service .span img {
+            display: block;
+            font-size: 60px;
+            line-height: 90px;
+            position: absolute;
+        }
+    </style>
+
+    <!--   Icon Section   -->
+
+    <div class="row width_content" style="width: 70%; text-align:center; ">
+        <div class="col m4 s12 l4">
+
+
+            <div class="single-service">
+                <span class="fa-9x center"><img src="/static/img/customer2.png" width="135px" height="130px"></span>
+                <div class="content"><br>
+                    <a href="customers/" style="font-size: 22px; font-weight:700; color:rgb(7, 44, 100);">View Customers </a>
+                </div>
+                <p style="margin-left: 15px; margin-right: 15px; text-align: justify;">
+                </p>
+            </div>
+        </div>
+
+        <div class="col m4 s12 l4">
+
+            <div class="single-service">
+                <span class="fa-9x center"><img src="/static/img/transfer2.png" width="130px" height="120px"></span>
+                <div class="content"><br>
+                    <a href="transfer_money/" style="font-size: 22px; font-weight:700;color:rgb(7, 44, 100)">Transfer Money</a>
+                </div>
+                <p style="margin-left: 15px; margin-right: 15px; text-align: justify;">
+                </p>
+            </div>
+        </div>
+
+        <div class="col m4 s12 l4">
+
+            <div class="single-service">
+                <span class="fa-9x center"><img src="/static/img/history.png" width="150px" height="135px"></span>
+                <div class="content"><br>
+                    <a href="transfer_details/" style="font-size: 22px; font-weight:700;color:rgb(7, 44, 100)">Transaction History</a>
+                </div>
+
+                <p style="margin-left: 15px; margin-right: 15px; text-align: justify;">
+
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    {% endblock %}

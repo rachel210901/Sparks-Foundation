@@ -1,0 +1,65 @@
+{% extends 'base1.html' %} {% load static %} {% block content %}
+<title>Customer Details</title>
+<br>
+<h1 style="color:darkslategrey;font-family:'Times New Roman', Times, serif, serif; font-weight:600;font-size: 45px;text-align:center;">Customer Details</h1>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-block m-auto">
+            <br>
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Account No.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Account Bal</th>
+                            <th>Transfer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cust in customer %}
+                        <tr>
+                            <td>{{cust.acct}}</td>
+                            <td>{{cust.name}}</td>
+                            <td>{{cust.email}}</td>
+                            <td>Rs.{{cust.accbal}}</td>
+                            <td> <a href="transfer_money" class="btn btn-primary m-1">Transfer</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <style>
+                    .table>thead>tr>th {
+                        vertical-align: bottom;
+                        border-bottom: 2px solid rgb(66, 65, 65);
+                        font-family: cursive;
+                        font-size: 25px;
+                    }
+                    
+                    .table>tbody>tr>td,
+                    .table>tbody>tr>th,
+                    .table>tfoot>tr>td,
+                    .table>tfoot>tr>th,
+                    .table>thead>tr>td,
+                    .table>thead>tr>th {
+                        padding: 8px;
+                        line-height: 1.42857143;
+                        vertical-align: top;
+                        border-top: 1px solid rgb(51, 50, 50);
+                        font-family: cursive;
+                        font-size: 20px;
+                    }
+                    
+                    .table>thead>tr>th {
+                        background-color: lightsteelblue;
+                    }
+                </style>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}

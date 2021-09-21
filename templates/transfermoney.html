@@ -1,0 +1,109 @@
+{% extends 'base.html' %} {% load static %} {% block content %} {% csrf_token %}
+<title>Tranfer Money</title>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12 col-md-12  d-block">
+            <h5 style="font-size:45px;font-weight:600;text-align:center;color:darkslategray; font-family:'Times New Roman', Times, serif, serif">Transfer Money</h5>
+            <div class="wrapper">
+                <div class="transfer_money">
+                    <form action="" method="post">
+                        {% csrf_token %}
+
+                        <div class="form_wrap">
+                            <div class="input_wrap">
+                                <label for="email" class="blk">Select Sender:</label>
+                                <select name="email" id="sender" class="blk inp" style="color:black" required>
+                    <option class="blk" style="color:black" value="select">From</option>
+                    {% for cust in customer  %}
+                        <option class="blk" style="color:black" value="{{cust.email}}">{{cust.name}}</option>
+                    {% endfor %}
+                    </select>
+                            </div>
+
+                            <div class="input_wrap">
+                                <label for="amount" class="blk">Receiver's Account No.:</label>
+                                <input type="number" class="blk inp" style="color:black" name="account" id="acct" value="null" required>
+                            </div>
+
+                            <div class="input_wrap">
+                                <label for="rec" class="blk">Select Receiver:</label>
+                                <select name="rec" id="reciever" class="blk inp" style="color:black" required>
+                    <option class="blk" style="color:black" value="select">To</option>
+                    {% for cust in customer %}
+                        <option class="blk" style="color:black" value="{{cust.email}}">{{cust.name}}</option>
+                    {% endfor %}
+                    </select>
+                            </div>
+
+                            <div class="input_wrap">
+                                <label for="amount" class="blk">Enter Amount:</label>
+                                <input type="number" class="blk inp" style="color:black" name="amount" id="amt" value="null" required>
+                            </div>
+
+                            <button type="submit" id="but" class="btn btn-danger">Transfer</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .wrapper {
+                    min-height: 100vh;
+                    display: contents;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                
+                .transfer_money {
+                    background: rgba(122, 98, 150, 0.452);
+                    padding: 30px;
+                    border-radius: 5px;
+                    width: 700px;
+                    margin: 40px;
+                    height: 500px;
+                    margin-left: 180px;
+                }
+                
+                .form_wrap {
+                    margin-top: 35px;
+                }
+                
+                .form_wrap .input_wrap {
+                    margin-bottom: 15px;
+                }
+                
+                .form_wrap .input_wrap:last-child {
+                    margin-bottom: 0;
+                }
+                
+                .form_wrap .input_wrap label {
+                    display: block;
+                    margin-bottom: 3px;
+                    color: #dbdef3;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-size: 20px;
+                }
+                
+                input {
+                    width: 100%;
+                    border-radius: 3px;
+                    border: 1px solid #9597a6;
+                    padding: 10px;
+                    outline: none;
+                    border-color: #ebd0ce;
+                    height: 40px;
+                }
+                
+                select {
+                    width: 100%;
+                    border-radius: 3px;
+                    border: 1px solid #9597a6;
+                    padding: 10px;
+                    outline: none;
+                    border-color: #ebd0ce;
+                    height: 40px;
+                }
+            </style>
+
+            {% endblock content %}
